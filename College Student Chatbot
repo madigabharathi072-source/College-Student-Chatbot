@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>College Student Chatbot</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        .chatbox {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #chat {
+            height: 350px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        input {
+            width: 70%;
+            padding: 12px;
+        }
+
+        button {
+            padding: 12px;
+        }
+
+        .user {
+            text-align: right;
+            margin: 10px;
+        }
+
+        .bot {
+            text-align: left;
+            margin: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="chatbox">
+
+    <h2>💬 College Student Chatbot</h2>
+
+    <div id="chat"></div>
+
+    <br>
+
+    <input type="text"
+           id="message"
+           placeholder="Ask something...">
+
+    <button onclick="sendMessage()">
+        Send
+    </button>
+
+</div>
+
+<script>
+
+function sendMessage() {
+
+    let input =
+        document.getElementById("message");
+
+    let message =
+        input.value.toLowerCase();
+
+    let chat =
+        document.getElementById("chat");
+
+    if (message === "") {
+        return;
+    }
+
+    chat.innerHTML +=
+        "<div class='user'>You: " +
+        message +
+        "</div>";
+
+    let reply = "";
+
+    if (message.includes("timing")) {
+
+        reply = "College timings are 11:00 AM to 5:50 PM.";
+
+    }
+    else if (message.includes("library")) {
+
+        reply = "The library provides books and study resources.";
+
+    }
+    else if (message.includes("exam")) {
+
+        reply = "Please check the college notice board for exam updates.";
+
+    }
+    else if (message.includes("department")) {
+
+        reply = "The college has multiple departments such as CSE, CSE-AI, ECE, EEE and others.";
+
+    }
+    else if (message.includes("hello") ||
+             message.includes("hi")) {
+
+        reply = "Hello! How can I help you?";
+
+    }
+    else {
+
+        reply = "Sorry, I don't know that yet.";
+
+    }
+
+    chat.innerHTML +=
+        "<div class='bot'>Bot: " +
+        reply +
+        "</div>";
+
+    input.value = "";
+
+    chat.scrollTop = chat.scrollHeight;
+}
+
+</script>
+
+</body>
+</html>
