@@ -1,0 +1,16 @@
+Main Features:
+
+Chat interface
+Student questions
+Automatic responses
+College information
+Simple keyword-based chatbot
+
+output:
+You: hello
+
+Bot: Hello! How can I help you?
+
+You: what are the college timings?
+
+Bot: College timings are 11:00 AM to 5:50 PM.
